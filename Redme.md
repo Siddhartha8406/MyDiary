@@ -1,0 +1,1 @@
+This is a Diary to record your Daily/special Activities
