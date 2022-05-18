@@ -1,0 +1,31 @@
+1. Login:
+    Login with password
+    Each User's username should be unique
+    Each user will have own Table in Database to store the memories
+    To reset password, use the unique userId
+
+2.SignUp:
+    Unique UserName
+    E-mail(optional) to recive email update about the memory
+
+3.Home Page
+    i. My Diary
+    ii. Create a event
+    iii. About
+
+    a. MyDiary: List of boxes with a Date and a Title
+    b. Create a event: Three Dropdowns for dates(Year, Month, date)
+
+
+---Backend---
+    i. Each table is created by a unique Primary Key/userId
+
+
+---Databases---
+    i. MyDiary - Stores all the Diary Content
+        Cred - Crediantials to Login
+        *userId* - To st
+
+
+--userID--
+    User id starts from 7474 and is a primary key in the table, it is incremented by 7or4 by using Random Module

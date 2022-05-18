@@ -1,8 +1,9 @@
 import mysql.connector
+from mysql.connector import connect     #importing only connect as it is the only required and can also be a bit more efficient
 import json
 
 #MyCursor.execute("CREATE DATABASE MyDiary")
-db = mysql.connector.connect(
+db = connect(
     host="localhost",
     user="root",
     password="root",
