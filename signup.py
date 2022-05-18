@@ -1,4 +1,3 @@
-from typing_extensions import Self
 import mysql.connector
 
 db = mysql.connector.connect(
@@ -10,10 +9,13 @@ db = mysql.connector.connect(
 myCursor = db.cursor()
 
 
-class SignUp:
-    def __init__(self, userName, Password):
-        pass
+def signUp(userName, password):
+    query = "INSERT INTO Cred (userName, pwd) VALUES (%s, %s)"
+    values = (userName, password)
+    myCursor.execute(query,values)
+    db.commit()
 
-myCursor.execute("SHOW DATABASES")
-for x in myCursor:
+myCursor.execute("SELECT * FROM Cred")
+a = myCursor.fetchall()
+for x in a:
     print(x)
