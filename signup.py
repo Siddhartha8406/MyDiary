@@ -15,7 +15,11 @@ def signUp(userName, password):
     myCursor.execute(query,values)
     db.commit()
 
-myCursor.execute("SELECT * FROM Cred")
-a = myCursor.fetchall()
-for x in a:
-    print(x)
+def ShowCreds():
+    myCursor.execute("SELECT * FROM Cred")
+    a = myCursor.fetchall()
+    for x in a:
+        print(x)
+
+if __name__=="__main__":
+    ShowCreds()
