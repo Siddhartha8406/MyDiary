@@ -1,13 +1,16 @@
 import mysql.connector
 from mysql.connector import connect     #importing only connect as it is the only required and can also be a bit more efficient
 import json
+from configparser import ConfigParser
 
 #MyCursor.execute("CREATE DATABASE MyDiary")
+config=ConfigParser()
+config.read("config.ini")
 db = connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="MyDiary"
+    host=config.get("database", "host"),
+    user=config.get("database", "user"),
+    password=config.get("database", "password"),
+    database=config.get("database", "database")
 )
 myCursor = db.cursor()
 

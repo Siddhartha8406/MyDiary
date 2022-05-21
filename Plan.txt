@@ -24,7 +24,7 @@
 ---Databases---
     i. MyDiary - Stores all the Diary Content
         Cred - Crediantials to Login
-            myCursor.execute("CREATE TABLE IF NOT EXISTS Cred(userName VARCHAR(50) NOT NULL, pwd VARCHAR(70) NOT NULL, userID int PRIMARY KEY AUTO_INCREMENT)")
+            myCursor.execute("CREATE TABLE IF NOT EXISTS Cred(* VARCHAR(50) NOT NULL, pwd VARCHAR(70) NOT NULL, userID int PRIMARY KEY AUTO_INCREMENT)")
             myCursor.execute("ALTER TABLE Cred AUTO_INCREMENT=7474")
             
         *userId* - To store users' data in a dedicated Table

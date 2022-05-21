@@ -1,10 +1,13 @@
-import mysql.connector
+from mysql.connector import connect
+from configparser import ConfigParser
 
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="root",
-    database="MyDiary"
+config=ConfigParser()
+config.read("config.ini")
+db = connect(
+    host=config.get("database", "host"),
+    user=config.get("database", "user"),
+    password=config.get("database", "password"),
+    database=config.get("database", "database")
 )
 myCursor = db.cursor()
 
