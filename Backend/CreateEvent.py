@@ -12,6 +12,8 @@ db = connect(
     password=config.get("database", "password"),
     database=config.get("database", "database")
 )
+"""Using .ini file to get database info"""
+
 myCursor = db.cursor()
 
 userID = "VR74"
