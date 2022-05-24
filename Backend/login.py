@@ -11,13 +11,21 @@ db = connect(
 )
 myCursor = db.cursor()
 
-def Login(userName, password):
+def login(userName, password):
     myCursor.execute(f"SELECT pwd FROM Cred WHERE userName='{userName}'")
     pwd = myCursor.fetchone()
     myCursor.execute(f"SELECT userID FROM Cred WHERE userName='{userName}'")
     id = myCursor.fetchone()
-    for x in pwd:
-        for y in id:
-            return(x==password), y
+    
+    #using for first take only the password, then check if passwords don't match 
+    #if they don't return Flase and #0000 as id
+    for pwd in pwd:
+        if pwd!=password:
+            return False, "#0000"
+    
+    #if the above condition fail it means passwords match so just return Ture and the ID
+    for id in id:
+        return True, id
 
-print(Login('Sid', "Sid7777"))
+if __name__ == "__main__":
+    print(login('Sid', "Sid7777"))

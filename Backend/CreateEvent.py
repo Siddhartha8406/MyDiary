@@ -16,12 +16,11 @@ db = connect(
 
 myCursor = db.cursor()
 
-userID = "VR74"
+def new_event(userID, Date, Title, Event):
+    userID = "VR74"
+    myCursor.execute(f"CREATE TABLE IF NOT EXISTS {userID}(Date DATE, Title VARCHAR(225), Description VARCHAR(1024))")
 
-myCursor.execute(f"CREATE TABLE IF NOT EXISTS {userID}(Date DATE, Title VARCHAR(225), Description VARCHAR(1024))")
-
-#myCursor.execute("INSERT INTO VR74 (Date, Title, Description) VALUES('2006-04-08','Birth1', 'I was Born on this date')")
-
-myCursor.execute("SELECT * FROM VR74")
-for x in myCursor:
-    print(x)
+    #myCursor.execute("INSERT INTO VR74 (Date, Title, Description) VALUES('2006-04-08','Birth1', 'I was Born on this date')")
+    myCursor.execute("SELECT * FROM VR74")
+    for x in myCursor:
+        print(x)
