@@ -11,4 +11,5 @@ def SignUp(uname, pswd):
 def New_Event(userID, Date, Title, Event):
     new_event(userID, Date, Title, Event)
 
-print(Login("Sid", "Sid7777"))
+if __name__ == "__main__":
+    print(Login("Sid", "Sid7777"))
