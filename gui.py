@@ -1,5 +1,6 @@
 from tkinter import Tk, Button, Entry, Label, Frame, PhotoImage, StringVar
 from Backend import Login
+from Backend.forgot_password import fgt_pswd_GUI
 
 root = Tk()
 root.geometry("500x450")
@@ -15,8 +16,8 @@ def login():
         print(f"Login Successful, user id={login_info[1]}")
         root.destroy()
     else:
-        wrong = Label(root, text="Wrong Credientials. Try again", background="#1263AC", foreground='red', font="size=15")
-        wrong.place(relx=0.28, rely=0.625)
+        wrong_cred = Label(root, text="Wrong Credientials. Try again", background="#1263AC", foreground='red', font="size=15")
+        wrong_cred.place(relx=0.28, rely=0.625)
         ForgotPassword.place(rely=0.675, relx=0.35)     
         CreateNew.place(rely=0.73, relx=0.32)
 
@@ -55,6 +56,6 @@ ForgotPassword.place(rely=0.64, relx=0.35)
 
 #---Create New---
 CreateNew=Button(root, text="Create New Account", background="#1263AC",border=0, font="size=18", command=SignUp, activebackground="#1A7BD3")
-CreateNew.place(rely=0.70, relx=0.32)
+CreateNew.place(rely=0.70, relx=0.325)
 
 root.mainloop()
